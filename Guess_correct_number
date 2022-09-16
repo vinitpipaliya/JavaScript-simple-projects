@@ -1,0 +1,34 @@
+Link for reple-->  https://replit.com/@PipaliyaVinit/22Exercise#index.js
+console.log("Lets Play a game.")
+console.log("I am piecking a number between 1 to 100 you have to guess which number it is.");
+let x = Math.floor((Math.random() * 100) + 1);
+let chances = 0;
+console.log("I piecked a number.");
+console.log("For higher score you have to guess with minimum chances.");
+let b = prompt("Enter a number between 1 to 100 : ");
+// b = Number.parseInt(b);
+while (b != x) {
+  if (b < 1 || b > 100) {
+    console.log("Invalid NUmber.");
+    console.log("Try again...");
+    b = prompt("Enter a number : ");
+    chances++;
+  }
+  else if (b > x) {
+    console.log("Entered Number is too big.");
+    console.log("Try again.");
+    b = prompt("Enter a number : ");
+    chances++;
+  }
+  else if (b < x) {
+    console.log("Entered Number is too small.");
+    console.log("Try again.");
+    b = prompt("Enter a number : ");
+    chances++;
+  }
+  else {
+    console.log("You have entered correct number.");
+    chances++;
+  }
+}
+console.log("Your score is ", (100 - chances),".");
