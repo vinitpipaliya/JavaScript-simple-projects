@@ -1,0 +1,91 @@
+Link of reple--> https://replit.com/@PipaliyaVinit/30Exercise-2#index.js
+console.log("Lets play a game.");
+console.log("You have to guess between 'Snake','Water' and 'Gun'.");
+console.log("Please Enter your choice with first letter in capital.");
+let userin = prompt("Enter your choice : ");
+let comscore = 0;
+let userscore = 0;
+let i = 0;
+while (i != 10) {
+  let words = ['Snake', 'Water', 'Gun'];
+  let word = words[Math.floor(Math.random() * words.length)];
+  if (word === userin) {
+    console.log("We guessed same!!")
+    console.log("I also guessed", word, ".");
+    console.log("Try again.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    i++;
+  }
+  else if ((word === 'Snake') && (userin === 'Water')) {
+    console.log("I guessed", word, ".");
+    console.log("Snake Drinks Water.");
+    console.log("I win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    comscore++;
+    i++;
+  }
+  else if (word === 'Snake' && userin === 'Gun') {
+    console.log("I guessed", word, ".");
+    console.log("Gun shots Snake.");
+    console.log("You win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    userscore++;
+    i++;
+  }
+  else if (word === 'Water' && userin === 'Snake') {
+    console.log("I guessed", word, ".");
+    console.log("Snake Drinks Water.");
+    console.log("You win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    userscore++;
+    i++;
+  }
+  else if ((word === 'Water' && userin === 'Gun')) {
+    console.log("I guessed", word, ".");
+    console.log("Gun Sinks in Water.");
+    console.log("I win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    comscore++;
+    i++;
+  }
+  else if (word === 'Gun' && userin === 'Snake') {
+    console.log("I guessed", word, ".");
+    console.log("Gun shots Snake.");
+    console.log("I win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    comscore++;
+    i++;
+  }
+  else {
+    console.log("I guessed.", word);
+    console.log("Gun Sinks in Water.");
+    console.log("You win.");
+    word = words[Math.floor(Math.random() * words.length)];
+    userin = prompt("Enter your choice.");
+    userscore++;
+    i++;
+  }
+}
+if (comscore > userscore) {
+  console.log("Computer Wins.");
+  console.log("Better luck Next time.");
+  console.log("My score is ", comscore, ".");
+  console.log("Your score is ", userscore, ".");
+}
+else if (comscore < userscore) {
+  console.log("Congratulations!!! You win.")
+  console.log("My score is ", comscore, ".");
+  console.log("Your score is ", userscore, ".");
+}
+else {
+  console.log("We both have same score.");
+  console.log("No one win.");
+  console.log("My score is ", comscore, ".");
+  console.log("Your score is ", userscore, ".");
+}
